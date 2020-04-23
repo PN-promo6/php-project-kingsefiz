@@ -32,6 +32,8 @@ $recepie1->imageUrl;
 $recepie1->creationDate = "Hier matin";
 $recepie1->creator = $user1;
 
+$items = array($recepie1, $recepie2);
+
 ?>
 
 <!DOCTYPE html>
