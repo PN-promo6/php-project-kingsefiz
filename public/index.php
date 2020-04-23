@@ -72,7 +72,7 @@
 
         <!-- Logo Area -->
         <div class="logo-area">
-            <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="index.php"><img src="img/core-img/logo.png" alt=""></a>
         </div>
 
         <!-- Navbar Area -->
@@ -101,7 +101,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Accueil</a></li>
+                                    <li><a href="index.php">Accueil</a></li>
                                     <li><a href="#">Recettes</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
@@ -142,8 +142,8 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="single-post.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Contact</a></li>
                                 </ul>
 
                                 <!-- Login/Register -->
