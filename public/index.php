@@ -1,3 +1,39 @@
+<?php
+
+require_once("../vendor/autoload.php");
+
+use Entity\User;
+use Entity\Recepie;
+
+$user1 = new User();
+$user1->id = 1;
+$user1->username = "Lilas";
+$user1->password = "HeySoulSister";
+
+$recepie1 = new Recepie();
+$recepie1->id = 1;
+$recepie1->title = "Tortilla espagnole";
+$recepie1->country = "Espagne";
+$recepie1->category = "Entrées";
+$recepie1->ingredients = "- 3 oeufs \n- 1 Oignon \n- 2 Pommes de terre \n - Sel \n - Poivre \n - Huile";
+$recepie1->description = "- Eplucher et découper les pommes de terre en rondelle de 1/2 cm d'épaisseur environ. \n -  Eplucher l'oignon et le couper en petits morceaux. \n - Mettre tous ces ingrédients dans la poêle. Celle-ci doit être remplie juqu'à mi-hauteur. \n - Couvrir d'huile d'olive (il faut que toutes les pommes de terre baignent dans l'huile). Couvrir la poêle d'un couvert (important : il faut que les pommes de terre cuisent à la fois dans l'huile et à la vapeur). \n -  Une fois les pommes de terre bien cuites (il faut que le pointe d'un couteur puisse s'y enfoncer sans peine), vider l'huile d'olive dans un récipient. \n -  Verser les pommes de terre et oignon dans un saladier. Ajouter les oeufs battus, salés et poivrés. Il faut qu'il y ait suffisamment d'oeufs pour que la tortilla soit bien liée. \n - Mélanger doucement (ne pas faire de la purée de pommes de terre !) \n - Remettre dans la poële 2 - 3 mm d'huile d'olive et y verser le mélange. Faire cuire à feu doux un côté de la tortilla. \n - Une fois le fond bien doré, retourner la tortilla sur une assiette. Cette opération est délicate car les oeufs sur le dessus ne sont pas cuits et l'huile dans le fond est très chaude. \n - Remettre un peu d'huile dans la poêle si nécessaire et y faire glisser la tortilla, afin de faire dorer l'autre côté. \n - Une fois les deux côtés dorés, glisser la tortilla dans une assiette.  ";
+$recepie1->imageUrl = "https://assets.afcdn.com/recipe/20130628/9442_w600.jpg";
+$recepie1->creationDate = "Hier matin";
+$recepie1->creator = $user1;
+
+$recepie2 = new User();
+$recepie2->id = 1;
+$recepie2->title = "T";
+$recepie2->country = "France";
+$recepie2->category = "Entrée";
+$recepie2->ingredient = "- Laitue \n- 1 Avocat \n- 2 Tomates \n - 1 Oeuf \n - 2 C.à.s d'huile d'olive \n - Croutons \n - Moutarde \n - 1 Citron \n - 1 Gouille d'ail";
+$recepie2->description;
+$recepie1->imageUrl;
+$recepie1->creationDate = "Hier matin";
+$recepie1->creator = $user1;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
