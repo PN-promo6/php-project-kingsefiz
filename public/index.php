@@ -10,6 +10,21 @@ $user1->id = 1;
 $user1->username = "Lilas";
 $user1->password = "HeySoulSister";
 
+$user2 = new User();
+$user2->id = 2;
+$user2->username = "Dali";
+$user2->password = "Azerty";
+
+$user3 = new User();
+$user3->id = 3;
+$user3->username = "LocalFrost";
+$user3->password = "Azertywastaken";
+
+$user4 = new User();
+$user4->id = 4;
+$user4->username = "Drizzy";
+$user4->password = "Cesthonteux";
+
 $recepie1 = new Recepie();
 $recepie1->id = 1;
 $recepie1->title = "Recette de dessert";
@@ -30,7 +45,7 @@ $recepie2->ingredients = "- 3 oeufs \n- Chocolat \n- Farine \n - Sel \n - Beurre
 $recepie2->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur a voluptates asperiores. Quaerat impedit nostrum consectetur blanditiis eveniet dolorum iste vel dolor, temporibus hic culpa nihil sunt voluptatem saepe dolores.";
 $recepie2->imageUrl = "https://images.pexels.com/photos/1030947/pexels-photo-1030947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
 $recepie2->creationDate = "Hier matin";
-$recepie2->creator = $user1;
+$recepie2->creator = $user4;
 
 $recepie3 = new Recepie();
 $recepie3->id = 3;
@@ -41,7 +56,7 @@ $recepie3->ingredients = "- 3 oeufs \n- Chocolat \n- Farine \n - Sel \n - Beurre
 $recepie3->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur a voluptates asperiores. Quaerat impedit nostrum consectetur blanditiis eveniet dolorum iste vel dolor, temporibus hic culpa nihil sunt voluptatem saepe dolores.";
 $recepie3->imageUrl = "https://images.pexels.com/photos/979310/pexels-photo-979310.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
 $recepie3->creationDate = "Hier matin";
-$recepie3->creator = $user1;
+$recepie3->creator = $user3;
 
 $recepie4 = new Recepie();
 $recepie4->id = 4;
@@ -52,7 +67,7 @@ $recepie4->ingredients = "- 3 oeufs \n- Chocolat \n- Farine \n - Sel \n - Beurre
 $recepie4->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur a voluptates asperiores. Quaerat impedit nostrum consectetur blanditiis eveniet dolorum iste vel dolor, temporibus hic culpa nihil sunt voluptatem saepe dolores.";
 $recepie4->imageUrl = "https://images.pexels.com/photos/1346381/pexels-photo-1346381.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
 $recepie4->creationDate = "Hier matin";
-$recepie4->creator = $user1;
+$recepie4->creator = $user2;
 
 $items = array($recepie1, $recepie2, $recepie3, $recepie4);
 
