@@ -3,8 +3,9 @@
 namespace Entity;
 
 use Entity\User;
+use ludk\Utils\Serializer;
 
-class Recepie
+class Recipe
 {
     public $id;
     public $title;
@@ -15,4 +16,6 @@ class Recepie
     public $imageUrl;
     public $creationDate;
     public User $creator;
+
+    use Serializer;
 }
