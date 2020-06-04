@@ -5,6 +5,7 @@ use Entity\User;
 use ludk\Persistence\ORM;
 
 require __DIR__ . '/../vendor/autoload.php';
+session_start();
 $orm = new ORM(__DIR__ . '/../Resources');
 $recipeRepo = $orm->getRepository(Recipe::class);
 $userRepo = $orm->getRepository(User::class);
@@ -15,10 +16,11 @@ switch ($action) {
     case 'register':
         if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirmPass'])) {
             $errorMsg = NULL;
-            $matchingNickname = $userRepo->findBy(array("nickname" => $_POST['username']));
-            if (count($matchingNickname > 0)) {
+            $matchingUsername = $userRepo->findBy(array("username" => $_POST['username']));
+
+            if (count($matchingUsername) > 0) {
                 $errorMsg = "Le pseudo est déjà utilisé !";
-            } else if ($_POST['password'] != $_POST['passwordRetype']) {
+            } else if ($_POST['password'] != $_POST['confirmPass']) {
                 $errorMsg = "Passwords are not the same.";
             } else if (strlen(trim($_POST['password'])) < 8) {
                 $errorMsg = "Your password should have at least 8 characters.";
@@ -26,10 +28,10 @@ switch ($action) {
                 $errorMsg = "Your nickame should have at least 4 characters.";
             }
             if ($errorMsg) {
-                include "../views/register.php";
+                include "../templates/register.php";
             } else {
                 $user = new User();
-                $user->nickname = $_POST['username'];
+                $user->username = $_POST['username'];
                 $user->password = $_POST['password'];
                 $manager->persist($user);
                 $manager->flush();
@@ -37,13 +39,13 @@ switch ($action) {
                 header('Location: ?action=display');
             }
         } else {
-            include "../views/register.php";
+            include "../templates/register.php";
         }
         break;
 
     case 'login':
         if (isset($_POST['username']) && isset($_POST['password'])) {
-            $usersWithThisLogin = $userRepo->findBy(array("nickname" => $_POST['username']));
+            $usersWithThisLogin = $userRepo->findBy(array("username" => $_POST['username']));
             if (count($usersWithThisLogin) == 1) {
                 $firstUserWithThisLogin = $usersWithThisLogin[0];
                 if ($firstUserWithThisLogin->password != md5($_POST['password'])) {
@@ -63,13 +65,29 @@ switch ($action) {
         break;
 
     case 'logout':
-        if (isset($_SESSION['userId'])) {
-            unset($_SESSION['userId']);
+        if (isset($_SESSION['user'])) {
+            unset($_SESSION['user']);
         }
         header('Location: ?action=display');
         break;
 
     case 'new':
+        if (isset($_SESSION['user']) && isset($_POST['title']) && isset($_POST['country']) && isset($_POST['category']) && isset($_POST['ingredients']) && isset($_POST['description']) && isset($_POST['imageUrl'])) {
+            $newRecipe = new Recipe();
+            $newRecipe->title = $_POST['title'];
+            $newRecipe->country = $_POST['country'];
+            $newRecipe->category = $_POST['category'];
+            $newRecipe->ingredients = $_POST['ingredients'];
+            $newRecipe->description = $_POST['description'];
+            $newRecipe->imageUrl = $_POST['imageUrl'];
+            $newRecipe->creationDate = "Aujourd'hui";
+            $newRecipe->creator = $_SESSION['user'];
+            $manager->persist($newRecipe);
+            $manager->flush();
+            header('Location: ?action=display.php');
+        } else {
+            include('../templates/new.php');
+        }
         break;
 
     case 'display':
