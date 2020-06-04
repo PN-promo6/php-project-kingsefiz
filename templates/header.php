@@ -103,17 +103,17 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index.php">Accueil</a></li>
-                                    <li><a href="?action=new">Contact</a></li>
+                                    <li><a href="?action=new">Ajouter une recette</a></li>
                                 </ul>
 
                                 <!-- Login/Register -->
                                 <?php if (isset($_SESSION['user'])) { ?>
                                     <div class="login-area">
-                                        <a href="?action=logout">Logout</a>
+                                        <a href="?action=logout">Se déconnecter</a>
                                     </div>
                                 <?php } else { ?>
                                     <div class="login-area">
-                                        <a href="?action=login">Login / Register</a>
+                                        <a href="?action=login">Se connecter / S'enregistrer</a>
                                     </div> <?php
                                         }
                                             ?>
