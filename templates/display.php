@@ -32,8 +32,7 @@
                             <a href="#" class="post-title"><?php echo $items[$i]->title ?></a>
                             <div class="post-meta">
                                 <a href="#" class="post-date"><?php echo $items[$i]->creationDate ?></a>
-                                <a href="#" class="post-author">By <?php echo $items[$i]->creator->username ?></a>
-                            </div>
+                                <a href="?top-search=@<?php echo $items[$i]->creator->username ?>" class="post-author">By <?php echo $items[$i]->creator->username ?></a> </div>
                             <?php echo $items[$i]->description ?>
                             <div style="margin:1rem"><a href="#" class="btn bueno-btn">Read More</a></div>
                         </div>
