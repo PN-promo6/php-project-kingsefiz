@@ -1,21 +1,21 @@
 [{
         "id": 1,
         "username": "Lilas",
-        "password": "HeySoulSister"
+        "password": "ef75298b2d761b76aeeb0b13eac3c94b"
     },
     {
         "id": 2,
         "username": "Dali",
-        "password": "Azerty"
+        "password": "f957c3b748aa5d068f8d9f7f320ca1c3"
     },
     {
         "id": 3,
         "username": "LocalFrost",
-        "password": "Azertywastaken"
+        "password": "6cdbb18389adaaa34aa4192507ef633c"
     },
     {
         "id": 4,
         "username": "Drizzy",
-        "password": "Cesthonteux"
+        "password": "2b057d47e64a14e3c9d65e94c8c9c4d5"
     }
 ]

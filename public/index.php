@@ -13,13 +13,65 @@ $manager = $orm->getManager();
 $action = $_GET["action"] ?? "display";
 switch ($action) {
     case 'register':
+        if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirmPass'])) {
+            $errorMsg = NULL;
+            $matchingNickname = $userRepo->findBy(array("nickname" => $_POST['username']));
+            if (count($matchingNickname > 0)) {
+                $errorMsg = "Le pseudo est déjà utilisé !";
+            } else if ($_POST['password'] != $_POST['passwordRetype']) {
+                $errorMsg = "Passwords are not the same.";
+            } else if (strlen(trim($_POST['password'])) < 8) {
+                $errorMsg = "Your password should have at least 8 characters.";
+            } else if (strlen(trim($_POST['username'])) < 4) {
+                $errorMsg = "Your nickame should have at least 4 characters.";
+            }
+            if ($errorMsg) {
+                include "../views/register.php";
+            } else {
+                $user = new User();
+                $user->nickname = $_POST['username'];
+                $user->password = $_POST['password'];
+                $manager->persist($user);
+                $manager->flush();
+                $_SESSION['user'] = $user;
+                header('Location: ?action=display');
+            }
+        } else {
+            include "../views/register.php";
+        }
         break;
-    case 'logout':
-        break;
+
     case 'login':
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $usersWithThisLogin = $userRepo->findBy(array("nickname" => $_POST['username']));
+            if (count($usersWithThisLogin) == 1) {
+                $firstUserWithThisLogin = $usersWithThisLogin[0];
+                if ($firstUserWithThisLogin->password != md5($_POST['password'])) {
+                    $errorMsg = "Wrong password.";
+                    include "../templates/login.php";
+                } else {
+                    $_SESSION['user'] = $usersWithThisLogin[0];
+                    header('Location:/?action=display');
+                }
+            } else {
+                $errorMsg = "Nickname doesn't exist.";
+                include "../templates/login.php";
+            }
+        } else {
+            include "../templates/login.php";
+        }
         break;
+
+    case 'logout':
+        if (isset($_SESSION['userId'])) {
+            unset($_SESSION['userId']);
+        }
+        header('Location: ?action=display');
+        break;
+
     case 'new':
         break;
+
     case 'display':
     default:
         $item = $recipeRepo->find(1);

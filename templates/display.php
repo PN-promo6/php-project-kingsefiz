@@ -120,9 +120,16 @@
                                 </ul>
 
                                 <!-- Login/Register -->
-                                <div class="login-area">
-                                    <a href="#">Login / Register</a>
-                                </div>
+                                <?php if (isset($_SESSION['userId'])) { ?>
+                                    <div class="login-area">
+                                        <a href="?action=logout">Logout</a>
+                                    </div>
+                                <?php } else { ?>
+                                    <div class="login-area">
+                                        <a href="?action=login">Login / Register</a>
+                                    </div> <?php
+                                        }
+                                            ?>
                             </div>
                             <!-- Nav End -->
 
