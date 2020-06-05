@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-2 col-lg-8">
-            <form method="Post">
+            <form method="Post" action="?action=new">
                 <div class="form-row">
                     <div class="form-group col-lg-6">
                         <label for="recipeName">Nom de la recette</label>
@@ -32,6 +32,7 @@
                         <label for="category">Catégorie</label>
                         <input type="text" class="form-control" name="category" id="category" placeholder="ex : Entrée">
                     </div>
+
                     <div class="form-group col-lg-12">
                         <label for="imageUrl">Url de l'illustration </label>
                         <input type="text" class="form-control" name="imageUrl" id="imageUrl" placeholder="ex : https://unsplash.com/photos/pxTe1qZjcvI">
@@ -39,6 +40,16 @@
                 </div>
 
                 <button type="submit" class="btn btn-success">Valider</button>
+                <?php
+                // Display Error message
+                if (!empty($errorMsg)) {
+                ?>
+                    <div class="alert alert-warning my-3">
+                        <strong>Information manquante !</strong> <?= $errorMsg ?>
+                    </div>
+                <?php
+                }
+                ?>
             </form>
         </div>
     </div>
