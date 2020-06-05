@@ -1,4 +1,4 @@
-<?php require_once("header.php"); ?>
+{% include 'inc/header.php' %}
 <!-- ##### Big Posts Area Start ##### -->
 <div class="big-posts-area mb-50">
     <div class="container">
@@ -51,4 +51,4 @@
 </div>
 <!-- ##### Big Posts Area End ##### -->
 
-<?php require_once("footer.php") ?>
+{% include 'inc/footer.php' %}

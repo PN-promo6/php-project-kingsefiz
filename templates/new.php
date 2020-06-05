@@ -1,5 +1,4 @@
-<?php require_once("header.php");
-?>
+{% include 'inc/header.php' %}
 
 <div class="container">
     <div class="row">
@@ -54,5 +53,4 @@
         </div>
     </div>
 
-    <?php
-    require_once("footer.php");
+    {% include 'inc/footer.php' %}
