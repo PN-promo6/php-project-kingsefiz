@@ -33,7 +33,7 @@
 
     <div class="container-login100" style="background-image: url('/img/bg-img/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-            <form class="login100-form validate-form" method="POST">
+            <form class="login100-form validate-form" method="POST" action="/login">
 
                 <span class="login100-form-title p-b-37">
                     Sign In
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="text-center p-t-57 p-b-20">
-                    <p class="txt2 hov1"> <span class="txt1">Don't have an account ? </span><a href="register">Sign Up</a></p>
+                    <p class="txt2 hov1"> <span class="txt1">Don't have an account ? </span><a href="/register">Sign Up</a></p>
                 </div>
                 <?php
                 // Display Error message

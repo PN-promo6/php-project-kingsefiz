@@ -35,7 +35,7 @@ class AuthController
         if (isset($_SESSION['user'])) {
             unset($_SESSION['user']);
         }
-        header('Location: display');
+        header('Location: /display');
     }
 
     public function register()
@@ -66,7 +66,7 @@ class AuthController
                 $manager->persist($user);
                 $manager->flush();
                 $_SESSION['user'] = $user;
-                header('Location: display');
+                header('Location: /display');
             }
         } else {
             include "../templates/register.php";

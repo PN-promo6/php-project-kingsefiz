@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="offset-2 col-lg-8">
-            <form method="Post" action="new">
+            <form method="Post" action="/new">
                 <div class="form-row">
                     <div class="form-group col-lg-6">
                         <label for="recipeName">Nom de la recette</label>

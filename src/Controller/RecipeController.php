@@ -41,7 +41,7 @@ class RecipeController
                 $newRecipe->creator = $_SESSION['user'];
                 $manager->persist($newRecipe);
                 $manager->flush();
-                header('Location: display');
+                header('Location: /display');
             }
         } else {
             include('../templates/new.php');
