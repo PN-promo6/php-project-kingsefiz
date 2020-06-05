@@ -104,18 +104,18 @@
                                 <ul>
                                     <li><a href="index.php">Accueil</a></li>
                                     <?php if (isset($_SESSION['user'])) { ?>
-                                        <li><a href="?action=new">Ajouter une recette</a></li>
+                                        <li><a href="new">Ajouter une recette</a></li>
                                     <?php } ?>
                                 </ul>
 
                                 <!-- Login/Register -->
                                 <?php if (isset($_SESSION['user'])) { ?>
                                     <div class="login-area">
-                                        <a href="?action=logout">Se déconnecter</a>
+                                        <a href="logout">Se déconnecter</a>
                                     </div>
                                 <?php } else { ?>
                                     <div class="login-area">
-                                        <a href="?action=login">Se connecter / S'enregistrer</a>
+                                        <a href="login">Se connecter / S'enregistrer</a>
                                     </div> <?php
                                         }
                                             ?>

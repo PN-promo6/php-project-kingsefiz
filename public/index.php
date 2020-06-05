@@ -14,7 +14,7 @@ $recipeRepo = $orm->getRepository(Recipe::class);
 $userRepo = $orm->getRepository(User::class);
 $manager = $orm->getManager();
 
-$action = $_GET["action"] ?? "display";
+$action = substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), 1);
 
 switch ($action) {
     case 'register':

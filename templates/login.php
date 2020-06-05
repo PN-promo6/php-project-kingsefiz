@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="text-center p-t-57 p-b-20">
-                    <p class="txt2 hov1"> <span class="txt1">Don't have an account ? </span><a href="?action=register">Sign Up</a></p>
+                    <p class="txt2 hov1"> <span class="txt1">Don't have an account ? </span><a href="register">Sign Up</a></p>
                 </div>
                 <?php
                 // Display Error message
