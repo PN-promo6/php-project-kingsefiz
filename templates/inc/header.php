@@ -73,7 +73,7 @@
 
         <!-- Logo Area -->
         <div class="logo-area">
-            <a href="index.php"><img src="img/core-img/logo.png" alt=""></a>
+            <a href="/"><img src="img/core-img/logo.png" alt=""></a>
         </div>
 
         <!-- Navbar Area -->
