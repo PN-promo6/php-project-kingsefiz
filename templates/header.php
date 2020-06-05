@@ -103,7 +103,9 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index.php">Accueil</a></li>
-                                    <li><a href="?action=new">Ajouter une recette</a></li>
+                                    <?php if (isset($_SESSION['user'])) { ?>
+                                        <li><a href="?action=new">Ajouter une recette</a></li>
+                                    <?php } ?>
                                 </ul>
 
                                 <!-- Login/Register -->
